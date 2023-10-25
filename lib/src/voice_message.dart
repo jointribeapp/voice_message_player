@@ -102,7 +102,7 @@ class _VoiceMessageState extends State<VoiceMessage>
     });
     _player.onPositionChanged.listen(
       (Duration p) => setState(
-        () => _remainingTime = widget.formatDuration(p),
+        () => _remainingTime = widget.formatDuration(_audioDuration! - p),
       ),
     );
   }
